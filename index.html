@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+  	<meta name="description" content="  ">
+  	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  	<meta name="author" content=" ">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<style type="text/css">
+
+  	</style>
+
+	<title>Inserindo Elementos</title>
+
+</head>
+<body id="corpo">
+
+	<!-- https://upload.wikimedia.org/wikipedia/pt/thumb/8/87/Ringstrilogyposter.jpg/250px-Ringstrilogyposter.jpg -->
+
+	<h1>Adicionando Elementos</h1>
+
+	<p>Digite o texto: <textarea type="text" id="texto"></textarea></p>
+	<p><button onclick="adicionarT()">Adicionar TXT</button></p>
+	<p><button onclick="adicionarI()">Adicionar IMG</button></p>
+	<p><button onclick="remover()">Remover</button></p>
+
+	<p id="text">Texto que será removido...</p>
+
+	<script>
+		
+		function adicionarT(){
+
+			var texto = document.getElementById('texto').value;
+			var para = document.createElement('p');
+			para.innerHTML = texto;
+			var corpo = document.getElementById('corpo');
+			corpo.appendChild(para);
+		}
+
+		function adicionarI(){
+
+			var texto = document.getElementById('texto').value;
+			var para = document.createElement('img');
+			para.src = texto;
+			para.width = 500;
+			var corpo = document.getElementById('corpo');
+			corpo.appendChild(para);
+		}
+
+		function remover(){
+			var pai = document.getElementById('corpo');
+			var filho = document.getElementById('text');
+
+			pai.removeChild(filho);
+		}
+
+	</script>
+
+</body>
+</html>
